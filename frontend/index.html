@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Riyadh Aqar – Price Prediction</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">RA</div>
+    <div>
+      <h1>Riyadh Aqar</h1>
+      <p>XGBoost Price Prediction Dashboard</p>
+    </div>
+  </div>
+  <div class="status">
+    <span class="dot"></span>
+    <span id="apiStatus">Checking...</span>
+    <button id="pingBtn">Ping</button>
+  </div>
+</header>
+
+<main class="layout">
+
+  <!-- LEFT PANEL -->
+  <section class="panel left">
+    <form id="predictForm">
+      <h3>BASIC INPUTS</h3>
+
+      <label>District (Neighbourhood) *</label>
+      <input id="neighbourhood" required />
+
+      <label>Area (space) m² *</label>
+      <input id="space" type="number" min="50" required />
+      <small>Minimum 50 m²</small>
+
+      <div class="grid-2">
+        <div>
+          <label>Rooms *</label>
+          <input id="rooms" type="number" min="1" required />
+          <small>Minimum 1</small>
+        </div>
+        <div>
+          <label>Bathrooms *</label>
+          <input id="bathrooms" type="number" min="1" required />
+          <small>Minimum 1</small>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <label>Street width (m) *</label>
+          <input id="street_width" type="number" min="8" required />
+          <small>Minimum 8m</small>
+        </div>
+        <div>
+          <label>Property age (years) *</label>
+          <input id="property_age" type="number" min="0" required />
+        </div>
+      </div>
+
+      <label>Front *</label>
+      <select id="front">
+        <option>North</option>
+        <option>South</option>
+        <option>East</option>
+        <option>West</option>
+      </select>
+
+      <label>Location *</label>
+      <select id="location">
+        <option>North Riyadh</option>
+        <option>South Riyadh</option>
+        <option>East Riyadh</option>
+        <option>West Riyadh</option>
+      </select>
+
+      <div id="errorBox" class="error"></div>
+
+      <div class="actions">
+        <button id="predictBtn" type="submit" class="primary">Predict Price</button>
+        <button id="resetBtn" type="button">Reset</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- RIGHT PANEL -->
+  <section class="panel right">
+
+    <!-- MAP IMAGE -->
+    <div class="map-canvas">
+      <div class="map-glass">
+        <div class="preview-card">
+          <h4>Prediction Preview</h4>
+          <div class="row"><span>Neighbourhood</span><b id="miniNeighbourhood">—</b></div>
+          <div class="row"><span>Area</span><b id="miniSpace">—</b></div>
+          <div class="row"><span>Front</span><b id="miniFront">—</b></div>
+          <div class="row"><span>Location</span><b id="miniLocation">—</b></div>
+          <div class="price" id="miniPrice">— SAR</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESULTS -->
+    <section class="results">
+      <header>
+        <h3>Suggested Listings (UI Cards)</h3>
+        <div>
+          <button id="clearCardsBtn">Clear</button>
+        </div>
+      </header>
+
+      <div class="price-box">
+        <div class="big-price" id="priceValue">— SAR</div>
+        <div class="sub" id="priceSub">Fill inputs and click Predict.</div>
+      </div>
+
+      <div id="cardsGrid" class="cards"></div>
+    </section>
+
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
