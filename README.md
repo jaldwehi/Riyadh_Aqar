@@ -1,4 +1,4 @@
-# Riyadh Villa Price Prediction — ML & FastAPI Project
+# Riyadh Villa Price Prediction — ML Project
 ## Project Overview
 
 This project aims to predict villa prices in Riyadh based on a variety of property-related features.
@@ -9,6 +9,7 @@ The main goal is to build a model that can accurately predict the price for any 
 
 ## Dataset
  • Source: https://www.kaggle.com/code/alialmuhaysin/riyadh-villas-aqar-dataset-analysis-eda
+ 
  • Size: 46,826 rows and 26 columns
  • Target variable: Price
  • Most influential features identified:
