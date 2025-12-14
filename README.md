@@ -1,4 +1,4 @@
-# Riyadh Villa Price Prediction — ML Project
+# Riyadh Villa Price Prediction - ML Project
 ## Project Overview
 
 This project aims to predict villa prices in Riyadh based on a variety of property-related features.
