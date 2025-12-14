@@ -11,51 +11,78 @@ The main goal is to build a model that can accurately predict the price for any 
  • Source: https://www.kaggle.com/code/alialmuhaysin/riyadh-villas-aqar-dataset-analysis-eda
  
  • Size: 46,826 rows and 26 columns
+ 
  • Target variable: Price
+ 
  • Most influential features identified:
+ 
  • space
+ 
  • neighborhood
+ 
  • location
 
 
 ## Data Cleaning
 The dataset contained a high number of:
+
  • Outliers
+ 
  • Missing values
+ 
 
 We also:
+
  • Removed an unimportant column
+ 
  • Fixed inconsistent values
+ 
  • Converted all columns to the correct data types
+ 
  • Documented all cleaning steps clearly in the EDA notebook
 
 
  ## Exploratory Data Analysis (EDA)
+ 
 Our EDA included:
+
  • Price distribution
+ 
  • Relationship between numerical features and price
+ 
  • Outlier detection & visualization
+ 
  • Log transformation to normalize highly skewed data
 
 These steps helped us better understand the patterns and improve modeling.
 
 
 ## Preprocessing
+
 Each model had its own preprocessing pipeline to match its requirements.
 
 We used:
+
  • One-Hot Encoding
+ 
  • Label Encoding
+ 
  • Train/Test Split before encoding to avoid data leakage
+ 
  • Normalization / scaling where necessary
+ 
 
 This allowed every algorithm to train on properly prepared data.
 
 
 ## Machine Learning Models
+
 We selected algorithms that handle high-dimensional data and non-linear relationships, including:
+
  • SVR (Support Vector Regression)
+ 
  • Random Forest Regressor
+ 
  • XGBoost Regressor
 
 These were the most suitable for our dataset due to the large number of features and variety in property characteristics.
